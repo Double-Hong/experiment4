@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: bisque;
+        }
+#img1{
+    width: 200px;
+    height: 200px;
+    display: none;
+}
+.addlabel{
+    display: inline-block;
+    width: 100px;
+}
+input{
+    width: 120px;
+}
+table
+{
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+}
+table td, table th
+{
+    border: 1px solid #cad9ea;
+    color: #666;
+    height: 30px;
+}
+table thead th
+{
+    background-color: #CCE8EB;
+    width: 100px;
+}
+table tr:nth-child(odd)
+{
+    background: #fff;
+}
+table tr:nth-child(even)
+{
+    background: #F5FAFA;
+}
+#table1{
+    border: 1px solid black;
+    display: none;
+}
+#table2{
+    border: 1px solid black;
+    display: none;
+}
+    </style>
+</head>
+<body>
+<!--<section class="header">-->
+<!--    <nav>-->
+<!--        <div id="navLinks">-->
+<!--            <i class="fa-solid fa-xmark" ></i>-->
+<!--            <a href="#">首页</a>-->
+<!--            <a href="#showcomm">商品</a>-->
+<!--            <a href="#campus">校园</a>-->
+<!--            <a href="#facilities">设施</a>-->
+<!--            <a href="#testimonials">感言</a>-->
+<!--            <a href="#contact">交流</a>-->
+<!--        </div>-->
+<!--    </nav>-->
+<!--</section>-->
+<div style="text-align: center">
+    <button onclick="showcomquery()" id="commbtn" class="btn btn-info" style="width: 300px">商品查询</button>
+    <button onclick="showbill()" id="billbtn" class="btn btn-info" style="width: 300px">订单查询</button>
+</div>
+<br><br>
+    <div id="commdiv" style="text-align: center">
+        <section id="showcomm">
+            <p style="text-align: center;color: #f44336;font-size: 50px;font-style: oblique" >查询商品信息</p>
+            <div>
+                <label>请输入想要查询的商品名称</label>
+                <input type="text" id="query1">
+                <button id="query3" onclick="commquery()">查询</button>
+            </div>
+            <div>
+                <img src="" id="img1" >
+            </div>
+            <div style="text-align: center">
+                <table id="table1" >
+                    <tr>
+                        <th>商品编码</th>
+                        <th>商品分类编码</th>
+                        <th>品牌编号</th>
+                        <th>商品名称</th>
+                        <th>商品规格</th>
+                        <th>型号</th>
+                        <th>单位</th>
+                        <th>市场价</th>
+                        <th>售价</th>
+                        <th>成本价</th>
+                        <th>商品描述</th>
+                        <th>库存数量</th>
+                    </tr>
+                    <tr id="tr1">
+                        <td>001</td>
+                        <td>001</td>
+                        <td>001</td>
+                        <td>雪碧</td>
+                        <td>600ml</td>
+                        <td>型号</td>
+                        <td>瓶</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>asdadsadasdadsdasdas</td>
+                        <td>100</td>
+                    </tr>
+                </table>
+                <br><br>
+                <button id="addcommbtn" onclick="showaddcomm()" class="btn btn-success">添加商品</button>
+            </div>
+            <br><br>
+            <div style="text-align: center;display: none" id="addcommdiv">
+                <label class="addlabel">商品编号</label><input id="add1" type="text"><br>
+                <label class="addlabel">商品分类编码</label><input id="add2" type="text"><br>
+                <label class="addlabel">品牌编号</label><input id="add3" type="text"><br>
+                <label class="addlabel">商品名称</label><input id="add4" type="text"><br>
+                <label class="addlabel">商品规格</label><input id="add5" type="text"><br>
+                <label class="addlabel">型号</label><input id="add6" type="text"><br>
+                <label class="addlabel">单位</label><input id="add7" type="text"><br>
+                <label class="addlabel">市场价</label><input id="add8" type="text"><br>
+                <label class="addlabel">售价</label><input id="add9" type="text"><br>
+                <label class="addlabel">成本价</label><input id="add10" type="text"><br>
+                <label class="addlabel">商品描述</label><input id="add11" type="text"><br>
+                <label class="addlabel">库存数量</label><input id="add12" type="text"><br>
+                <br>
+                <button id="add" onclick="addcomm()" class="btn btn-danger">添加</button>
+            </div>
+        </section>
+    </div>
+    <div id="billdiv" style="display: none;text-align: center">
+        <p style="text-align: center;color: #f44336;font-size: 50px;font-style: oblique" >查询账单信息</p>
+        <div>
+            <label>请输入订单编号</label>
+            <input type="text" id="query2">
+            <button id="query4" onclick="orderquery()">查询</button>
+            <div>
+                <table id="table2" style="text-align: center">
+                    <tr>
+                        <th>订单编号</th><th>客户编号</th><th>客户电话</th>
+                        <th>客户姓名</th><th>客户地址</th><th>邮政编码</th>
+                        <th>下单时间</th><th>下单金额</th>
+                    </tr>
+                    <tr id="tr2">
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    // ....
+    var lastbtn="commbtn"
+    var lastdiv="commdiv"
+    function cleanall()
+    {
+        var elem=document.getElementById(lastdiv);
+        var elem2=document.getElementById(lastbtn);
+        elem.style.display="none";
+        elem2.style.backgroundColor="black";
+    }
+    function showcomquery()
+    {
+        cleanall();
+        var elem=document.getElementById("commdiv")
+        var elem2=document.getElementById("commbtn")
+        elem.style.display="block";
+        elem2.style.backgroundColor="aqua"
+        lastdiv="commdiv";
+        lastbtn="commbtn";
+    }
+    function showbill()
+    {
+        cleanall();
+        var elem=document.getElementById("billdiv")
+        var elem2=document.getElementById("billbtn")
+        elem.style.display="block";
+        elem2.style.backgroundColor="aqua"
+        lastdiv="billdiv";
+        lastbtn="billbtn";
+    }
+    // ...
+
+    // ...
+    function commquery()
+    {
+        var commname=$('#query1').val()
+        var d={
+            "commname":commname
+        }
+        var url="/experiment4_war_exploded/querycommServlet"
+        $.ajax({
+            type:"post",
+            url:url,
+            dataType:"json",
+            data:d,
+            success:function (data){
+                var img =document.getElementById("img1")
+                img.src=data[0].commPhoto;
+                img.style.display="block";
+                var trr=document.getElementById("tr1")
+                var cells=trr.cells;
+                var tablecomm=document.getElementById("table1")
+                tablecomm.style.display="block";
+                var res={commId, classifyId, brandId, commName, commSize, modelNumber,
+                    unitOfMeasure,marketPrice,salePrice,costPrice,commPhoto,
+                    commIntro,inventoryNum} = data[0];
+                var i=0;
+                for(var key in res){
+                    if(key=="commPhoto"){
+                        continue;
+                    }
+                    cells[i].innerText=res[key];
+                    i++;
+
+                }
+            }
+        })
+
+
+    }
+    function orderquery(){
+        var order = $('#query2').val();
+        var d={
+            "orderId":order
+        }
+        var url="/experiment4_war_exploded/queryorderServlet"
+        $.ajax({
+            type:"post",
+            url:url,
+            dataType: "json",
+            data:d,
+            success:function (data){
+                var tableorder = document.getElementById("table2");
+                tableorder.style.display="block";
+                var res ={
+                    orderId,customerId,custPhone,custName,custAdress,postCode,orderTime,orderMoney
+                }=data[0]
+                var trr=document.getElementById("tr2");
+                var cells=trr.cells;
+                var i=0;
+                for (var Key in res) {
+                    cells[i].innerText=res[Key];
+                    i++;
+                }
+            }
+        })
+    }
+    // ...
+
+    // ...
+    function showaddcomm(){
+        var adddiv=document.getElementById("addcommdiv");
+        adddiv.style.display="block";
+    }
+    function addcomm(){
+        var add1=$('#add1').val();
+        var add2=$('#add2').val();
+        var add3=$('#add3').val();
+        var add4=$('#add4').val();
+        var add5=$('#add5').val();
+        var add6=$('#add6').val();
+        var add7=$('#add7').val();
+        var add8=$('#add8').val();
+        var add9=$('#add9').val();
+        var add10=$('#add10').val();
+        var add11=$('#add11').val();
+        var add12=$('#add12').val();
+        var d={
+            "commId":add1,
+            "classifyId":add2,
+            "brandId":add3,
+            "commName":add4,
+            "commSize":add5,
+            "modelNumber":add6,
+            "unitOfMeasure":add7,
+            "marketPrice":add8,
+            "salePrice":add9,
+            "costPrice":add10,
+            "commIntro":add11,
+            "inventoryNum":add12
+        }
+        var url="/experiment4_war_exploded/addcommServlet"
+        $.ajax({
+            type:"post",
+            url:url,
+            dataType:"json",
+            data:d,
+            success:function (data){
+                if(data.code=="ok"){
+                    alert("添加成功")
+                }
+                else {
+                    alert("添加失败")
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>

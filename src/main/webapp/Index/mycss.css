@@ -1,0 +1,74 @@
+.header {
+    height: 100vh;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.5))), url(images/bg.webp);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(images/bg.webp);
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 1% 5%;
+}
+
+.header nav h2 {
+    color: antiquewhite;
+}
+
+.header nav h2 span {
+    color: #f44336;
+}
+
+@media (max-width: 768px) {
+    .header nav h2 {
+        margin: auto;
+    }
+}
+.header nav #navLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.header nav #navLinks a {
+    text-decoration: none;
+    color: #FF00FF;
+    font-size: 1.2rem;
+    padding: .5rem .75rem;
+}
+.header nav #navLinks a::after {
+    display: block;
+    content: '';
+    height: 2px;
+    width: 0;
+    background-color: #f44336;
+    margin: auto;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.header nav #navLinks a:hover::after {
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .header nav #navLinks a {
+        text-align: center;
+    }
+    .header nav #navLinks a:hover {
+        color: #f44336;
+        background-color: antiquewhite;
+    }
+}
