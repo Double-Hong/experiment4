@@ -2,14 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPage</title>
 </head>
+<style>
+#min{
+    font-size: 150px;
+    color: orange;
+}
+#fu{
+    font-size: 100px;
+    color: orchid;
+}
+#ye{
+    font-size: 100px;
+    color: greenyellow;
+}
+#tao{
+    font-size: 100px;
+    color: blue;
+}
+#one{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+}
+#dian{
+    font-size: 100px;
+}
+</style>
 <body>
-<button onclick="gotomain()">跳转主页面</button>
+    <label id="min" onclick="min()">闵乙洪</label><br>
+    <label id="fu" onclick="fu()">傅子峰</label><br>
+    <label id="ye" onclick="ye()">叶子</label><br>
+    <label id="tao" onclick="tao()">陶国坤</label>
+    <div id="one">
+        <label id="dian">点名字试试</label><br>
+        <img src="https://th.bing.com/th/id/OIP.N_I_81KgV-oSVxyeNp0FRgHaHa?w=214&h=214&c=7&r=0&o=5&dpr=1.25&pid=1.7">
+    </div>
+    <button onclick="ran()">随机生成</button><label id="len"></label><label id="hhh">英雄:  </label>
+</body>
 <script>
-    function gotomain(){
-        window.location=("/experiment4/src/main/webapp/Index/Index.html");
+    var myArray=[-1,-1,-1,-1];
+
+    function min(){
+        var min=document.getElementById("min");
+        min.innerText="帅"
+    }
+    function fu(){
+        var fu=document.getElementById("fu");
+        fu.innerText="好jb哈"
+    }
+    function ye(){
+        var ye=document.getElementById("ye");
+        ye.innerText="哈哈哈哈"
+    }
+    function tao(){
+        var tao=document.getElementById("tao");
+        tao.innerText="哈哈哈哈"
+    }
+    function ran(){
+        var lengend =["安妮","奥拉夫","加里奥","卡牌","赵信","厄加特","妖姬","吸血鬼","稻草人","天使","剑圣","牛头","瑞兹","塞恩","轮子妈","奶妈","提莫","小炮",
+                        "狼人","雪人","女枪","寒冰","蛮王","武器","莫甘娜","时光老头","辛吉德","寡妇","老鼠","死歌","大虫子","木木","龙龟","冰凤凰","小丑","蒙多",
+                        "琴女","卡萨丁","刀妹","风女","船长","飞机","卡尔玛","宝石","小法","巨魔","斯维因","女警","机器人","石头人","卡特","梦魇","大树","鳄鱼","皇子",
+                        "蜘蛛","发条","猴子","火男","盲僧","VN","兰博","蛇女","蝎子","大发明家","狗头","豹女","乌迪尔","波比","酒桶","潘森","EZ","铁男","掘墓","阿卡丽",
+                        "凯南","盖伦","日女","马尔扎哈","男刀","瑞文","大嘴","肾","光辉","泽拉斯","龙女","狐狸","狐臭","小鱼","狗熊","狮子狗","维鲁斯","泰坦","维克托",
+                        "猪妹","剑姬","炸弹人","露露","德莱文","人马","螳螂","诺手","杰斯","冰女","皎月","奎因","辛德拉","龙王","凯隐","佐伊","婕拉","卡莎","萨勒芬里",
+                        "纳尔","扎克","亚索","大眼","岩雀","青钢影","阿克尚","虚空女皇","布隆","烬","千珏","泽丽","爆爆","塔姆","佛耶戈","赛娜","卢锡安","劫","克烈",
+                        "艾克","奇亚娜","蔚","剑魔","娜美","沙皇","猫咪","莎米拉","锤石","俄洛伊","挖掘机","翠神","滑板鞋","巴德","洛","霞","奥恩","塞拉斯","妮蔻","厄斐琉斯",
+                        "芮尔","派克","薇古丝","永恩","腕豪","莉莉娅","格温","烈娜塔"]
+        var i=Math.floor(Math.random()*160)
+        var para=document.createElement("label");
+        para.innerText=lengend[i]+"       "+"    "
+        var hhh=document.getElementById("hhh");
+        hhh.appendChild(para);
     }
 </script>
-</body>
 </html>
